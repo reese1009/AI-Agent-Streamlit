@@ -20,5 +20,5 @@ st.title('Sales Data')
 uploaded_file = st.file_uploader('Choose a .csv file')
 if uploaded_file is not None:
 #read csv
-df = pd.read_csv(uploaded_file))
+df = pd.read_csv(uploaded_file)
 
