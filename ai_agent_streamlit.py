@@ -11,4 +11,14 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+#set up the app page
 st.title('Sales Data')
+
+
+
+#import the dataframe
+uploaded_file = st.file_uploader('Choose a .csv file')
+if uploaded_file is not None:
+#read csv
+df = pd.read_csv(uploaded_file))
+
