@@ -37,16 +37,16 @@ with tab2:
 
         # Layout metrics in columns
         col1, col2, col3 = st.columns(3)
-        col1.metric("Total Sales", f"${df['Sales'].sum():,.2f}")
-        col2.metric("Avg Order Value", f"${df['Sales'].mean():.2f}")
+        col1.metric("Total Sales", f"${df['Sales_Amount'].sum():,.2f}")
+        col2.metric("Avg Order Value", f"${df['Sales_Amount'].mean():.2f}")
         col3.metric("Top Region", df["Region"].value_counts().idxmax())
 
         # Filter dropdown
-        selected_category = st.selectbox("Choose a product category", df["Category"].unique())
+        selected_category = st.selectbox("Choose a product category", df["Product_Category"].unique())
 
         # Display summary
-        filtered_df = df[df["Category"] == selected_category]
-        st.write(f"Total sales for {selected_category}: ${filtered_df['Sales'].sum():,.2f}")
+        filtered_df = df[df["Product_Category"] == selected_category]
+        st.write(f"Total sales for {selected_category}: ${filtered_df['Sales_Amount'].sum():,.2f}")
 
         # Chart
         fig = px.bar(filtered_df, x="Region", y="Sales", title=f"{selected_category} Sales by Region")
