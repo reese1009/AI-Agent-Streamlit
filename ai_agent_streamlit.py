@@ -8,6 +8,7 @@ Original file is located at
 """
 
 
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -36,14 +37,15 @@ with tab2:
 
     # Layout metrics in columns
     col1, col2, col3 = st.columns(3)
-    col1.metric("Total Sales", "$103,400")
-    col2.metric("Avg Order Value", "$21.45")
-    col3.metric("Top Region", "East")
 
     if "data" in st.session_state:
       df = st.session_state["data"]
     
       selected_category = st.selectbox("Choose a product category", df["Category"].unique())
+
+      col1.metric("Total Sales", "$103,400")
+      col2.metric("Avg Order Value", "$21.45")
+      col3.metric("Top Region", "East")
 
       # Display summary or conditional insight
       filtered_df = df[df["Category"] == selected_category]
@@ -55,7 +57,6 @@ with tab2:
 
     else:
       st.warning("Please upload a CSV file first in the 'Upload' tab.")
-
 
 with tab3:
     st.header('Visualize Your Data')
