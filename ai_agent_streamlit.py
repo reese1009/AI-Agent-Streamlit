@@ -49,7 +49,7 @@ with tab2:
         st.write(f"Total sales for {selected_category}: ${filtered_df['Sales_Amount'].sum():,.2f}")
 
         # Chart
-        fig = px.bar(filtered_df, x="Region", y="Sales", title=f"{selected_category} Sales by Region")
+        fig = px.bar(filtered_df, x="Region", y="Sales_Amount", title=f"{selected_category} Sales by Region")
         st.plotly_chart(fig, use_container_width=True)
 
     else:
