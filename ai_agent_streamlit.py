@@ -50,9 +50,11 @@ with tab2:
         st.write(f"Total sales for {selected_category}: ${filtered_df['Sales_Amount'].sum():,.2f}")
 
         # Chart
-        region_order = ["North", "East", "South", "West"]  # or your preferred order
+        region_order = ["North", "East", "South", "West"]
         filtered_df["Region"] = pd.Categorical(filtered_df["Region"], categories=region_order, ordered=True)
+
         fig = px.bar(filtered_df, x="Region", y="Sales_Amount", title=f"{selected_category} Sales by Region")
+
         st.plotly_chart(fig, use_container_width=True)
 
     else:
