@@ -31,6 +31,8 @@ with tab1:
 with tab2:
     st.header('Gain Data Insights')
     st.image('https://www.dimensions.ai/wp-content/uploads/2023/02/corporateRD-220324-usecase-image-02.png', width=200)
+    fig = px.bar(filtered_df, x="Region", y="Sales", title=f"{selected_category} Sales by Region")
+    st.plotly_chart(fig, use_container_width=True)
 with tab3:
     st.header('Visualize Your Data')
     st.image('https://images.ctfassets.net/pdf29us7flmy/1OY6V5qnB5e490hm3lTK2i/c490cc85b117b64bc5ac10f0b9d6f1a4/GOLD-6487-CareerGuide-Batch04-Images-GraphCharts-04-Histogram.png?w=720&q=100&fm=jpg', width=200)
