@@ -25,7 +25,7 @@ with tab1:
     if uploaded_file is not None:
       #read csv
       df = pd.read_csv(uploaded_file)
-      st.dataframe(uploaded_file, height=1500)
+      st.dataframe(df, height=1500)
     else:
       st.warning('you need to upload a csv or excel file.')
 with tab2:
