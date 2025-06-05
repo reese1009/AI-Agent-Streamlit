@@ -22,5 +22,5 @@ if uploaded_file is not None:
   #read csv
   df = pd.read_csv(uploaded_file)
 else:
-  st.warning('you need to upload a csv or excel file.')
+  st.warning('You need to upload a .csv file.')
 
