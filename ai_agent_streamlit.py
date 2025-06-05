@@ -30,7 +30,7 @@ with tab1:
       st.warning('You need to upload a CSV file.')
 with tab2:
     st.header("Gain Data Insights")
-    st.image('...', width=200)
+    st.image('https://www.dimensions.ai/wp-content/uploads/2023/02/corporateRD-220324-usecase-image-02.png', width=200)
 
     if "data" in st.session_state:
         df = st.session_state["data"]
