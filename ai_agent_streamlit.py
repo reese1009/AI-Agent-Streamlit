@@ -12,7 +12,7 @@ import pandas as pd
 import numpy as np
 
 #set up the app page
-st.title('InsightBot - Sales Data Asisstant')
+st.title('InsightBot - Sales Data Assistant')
 
 tab1, tab2, tab3, tab4, tab5 = st.tabs(['Upload & Overview', 'Insights', 'Visualizations','Smart Assistant', 'Export'])
 
