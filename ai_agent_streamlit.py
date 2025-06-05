@@ -7,14 +7,8 @@ Original file is located at
     https://colab.research.google.com/drive/1EnBolq2J-NTcrzH8EmXLogySUQu7T2Xk
 """
 
-from google.colab import files
-files.download("requirements.txt")
+import streamlit as st
+import pandas as pd
+import numpy as np
 
-requirements = """
-streamlit
-pandas
-numpy
-plotly
-"""
-with open("requirements.txt", "w") as f:
-    f.write(requirements.strip())
+st.title('Sales Data')
