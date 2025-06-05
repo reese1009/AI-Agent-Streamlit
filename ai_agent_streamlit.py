@@ -19,6 +19,13 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs(['Upload & Overview', 'Insights', 'Visual
 with tab1:
     st.header('Upload your Data File (CSV)')
     st.image('https://cdn.prod.website-files.com/6064b31ff49a2d31e0493af1/6811f5efb2d08280bdf50863_63ff784daa460f472e688fb0_csv%2520(2).png', width=200)
+    #import the dataframe
+    uploaded_file = st.file_uploader('Choose a .csv file')
+    if uploaded_file is not None:
+      #read csv
+      df = pd.read_csv(uploaded_file)
+    else:
+      st.warning('you need to upload a csv or excel file.') 
 with tab2:
     st.header('Gain Data Insights')
     st.image('https://www.dimensions.ai/wp-content/uploads/2023/02/corporateRD-220324-usecase-image-02.png', width=200)
@@ -31,12 +38,3 @@ with tab4:
 with tab4:
     st.header('Save and Export')
     st.image('https://static-00.iconduck.com/assets.00/save-icon-512x512-552twxqx.png', width=200)
-
-
-#import the dataframe
-uploaded_file = st.file_uploader('Choose a .csv file')
-if uploaded_file is not None:
-  #read csv
-  df = pd.read_csv(uploaded_file)
-else:
-  st.warning('you need to upload a csv or excel file.')
