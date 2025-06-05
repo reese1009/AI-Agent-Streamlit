@@ -35,6 +35,6 @@ with tab3:
 with tab4:
     st.header('Chat with a Smart Asisstant')
     st.image('https://litslink.com/wp-content/uploads/2023/11/f2-1.png', width=200)
-with tab4:
+with tab5:
     st.header('Save and Export')
     st.image('https://static-00.iconduck.com/assets.00/save-icon-512x512-552twxqx.png', width=200)
