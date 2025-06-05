@@ -7,6 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1EnBolq2J-NTcrzH8EmXLogySUQu7T2Xk
 """
 
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -25,28 +26,37 @@ with tab1:
     if uploaded_file is not None:
       #read csv
       df = pd.read_csv(uploaded_file)
+      st.session_state["data"] = df
       st.dataframe(df, height=1500)
     else:
       st.warning('You need to upload a CSV file.')
 with tab2:
     st.header('Gain Data Insights')
     st.image('https://www.dimensions.ai/wp-content/uploads/2023/02/corporateRD-220324-usecase-image-02.png', width=200)
+
     # Layout metrics in columns
     col1, col2, col3 = st.columns(3)
     col1.metric("Total Sales", "$103,400")
     col2.metric("Avg Order Value", "$21.45")
     col3.metric("Top Region", "East")
 
-    # Add filter dropdowns
-    selected_category = st.selectbox("Choose a product category", df["Category"].unique())
+    if "data" in st.session_state:
+      df = st.session_state["data"]
+    
+      selected_category = st.selectbox("Choose a product category", df["Category"].unique())
 
-    # Display summary or conditional insight
-    filtered_df = df[df["Category"] == selected_category]
-    st.write(f"Total sales for {selected_category}: ${filtered_df['Sales'].sum():,.2f}")
+      # Display summary or conditional insight
+      filtered_df = df[df["Category"] == selected_category]
+      st.write(f"Total sales for {selected_category}: ${filtered_df['Sales'].sum():,.2f}")
 
-    # Show interactive chart
-    fig = px.bar(filtered_df, x="Region", y="Sales", title=f"{selected_category} Sales by Region")
-    st.plotly_chart(fig, use_container_width=True)
+      # Show interactive chart
+      fig = px.bar(filtered_df, x="Region", y="Sales", title=f"{selected_category} Sales by Region")
+      st.plotly_chart(fig, use_container_width=True)
+
+    else:
+      st.warning("Please upload a CSV file first in the 'Upload' tab.")
+
+
 with tab3:
     st.header('Visualize Your Data')
     st.image('https://images.ctfassets.net/pdf29us7flmy/1OY6V5qnB5e490hm3lTK2i/c490cc85b117b64bc5ac10f0b9d6f1a4/GOLD-6487-CareerGuide-Batch04-Images-GraphCharts-04-Histogram.png?w=720&q=100&fm=jpg', width=200)
