@@ -34,7 +34,7 @@ with tab3:
     st.image('https://images.ctfassets.net/pdf29us7flmy/1OY6V5qnB5e490hm3lTK2i/c490cc85b117b64bc5ac10f0b9d6f1a4/GOLD-6487-CareerGuide-Batch04-Images-GraphCharts-04-Histogram.png?w=720&q=100&fm=jpg', width=200)
 with tab4:
     st.header('Chat with a Smart Asisstant')
-    st.image('https://litslink.com/wp-content/uploads/2023/11/f2-1.png', width=200)
+    st.image('https://litslink.com/wp-content/uploads/2023/11/f2-1.png', width=400)
 with tab5:
     st.header('Save and Export')
     st.image('https://static-00.iconduck.com/assets.00/save-icon-512x512-552twxqx.png', width=200)
