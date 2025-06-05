@@ -27,7 +27,7 @@ with tab1:
       df = pd.read_csv(uploaded_file)
       st.dataframe(df, height=1500)
     else:
-      st.warning('you need to upload a csv or excel file.')
+      st.warning('You need to upload a CSV file.')
 with tab2:
     st.header('Gain Data Insights')
     st.image('https://www.dimensions.ai/wp-content/uploads/2023/02/corporateRD-220324-usecase-image-02.png', width=200)
