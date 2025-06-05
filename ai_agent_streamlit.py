@@ -14,6 +14,23 @@ import numpy as np
 #set up the app page
 st.title('Sales Data')
 
+tab1, tab2, tab3, tab4, tab5 = st.tabs(['Upload & Overview', 'Insights', 'Visualizations','Smart Assistant', 'Export'])
+
+with tab1:
+    st.header('Upload your Data File (CSV)')
+    st.image('https://cdn.prod.website-files.com/6064b31ff49a2d31e0493af1/6811f5efb2d08280bdf50863_63ff784daa460f472e688fb0_csv%2520(2).png', width=200)
+with tab2:
+    st.header('Gain Data Insights')
+    st.image('https://www.dimensions.ai/wp-content/uploads/2023/02/corporateRD-220324-usecase-image-02.png', width=200)
+with tab3:
+    st.header('Visualize Your Data')
+    st.image('https://images.ctfassets.net/pdf29us7flmy/1OY6V5qnB5e490hm3lTK2i/c490cc85b117b64bc5ac10f0b9d6f1a4/GOLD-6487-CareerGuide-Batch04-Images-GraphCharts-04-Histogram.png?w=720&q=100&fm=jpg', width=200)
+with tab4:
+    st.header('Chat with a Smart Asisstant')
+    st.image('https://litslink.com/wp-content/uploads/2023/11/f2-1.png', width=200)
+with tab4:
+    st.header('Save and Export')
+    st.image('https://static-00.iconduck.com/assets.00/save-icon-512x512-552twxqx.png', width=200)
 
 
 #import the dataframe
@@ -22,5 +39,4 @@ if uploaded_file is not None:
   #read csv
   df = pd.read_csv(uploaded_file)
 else:
-  st.warning('You need to upload a .csv file.')
-
+  st.warning('you need to upload a csv or excel file.')
