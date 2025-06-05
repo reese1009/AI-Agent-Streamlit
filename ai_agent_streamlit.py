@@ -31,6 +31,20 @@ with tab1:
 with tab2:
     st.header('Gain Data Insights')
     st.image('https://www.dimensions.ai/wp-content/uploads/2023/02/corporateRD-220324-usecase-image-02.png', width=200)
+    # Layout metrics in columns
+    col1, col2, col3 = st.columns(3)
+    col1.metric("Total Sales", "$103,400")
+    col2.metric("Avg Order Value", "$21.45")
+    col3.metric("Top Region", "East")
+
+    # Add filter dropdowns
+    selected_category = st.selectbox("Choose a product category", df["Category"].unique())
+
+    # Display summary or conditional insight
+    filtered_df = df[df["Category"] == selected_category]
+    st.write(f"Total sales for {selected_category}: ${filtered_df['Sales'].sum():,.2f}")
+
+    # Show interactive chart
     fig = px.bar(filtered_df, x="Region", y="Sales", title=f"{selected_category} Sales by Region")
     st.plotly_chart(fig, use_container_width=True)
 with tab3:
